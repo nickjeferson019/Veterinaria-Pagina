@@ -1,0 +1,80 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-image: url('/IMG/urgencias2.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center 50px;
+  color: #333;
+}
+
+/* Estilos para el encabezado y la navegación */
+header {
+  background-color: #0083B0;
+  padding: 10px 10px;
+  text-decoration: none;
+}
+
+nav{
+    text-align: right;
+    padding: 30px 50px 0 0;
+}
+
+nav > a{
+    color:#fff;
+    font-weight: 300;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+nav > a:hover{
+    text-decoration: underline;
+}
+
+/* Estilo para la sección de estadísticas */
+#urgencias-estadisticas {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.784);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+#urgencias-estadisticas h1 {
+  margin-bottom: 20px;
+  font-size: 2em;
+  color: #151c21;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+#urgencias-estadisticas canvas {
+  background: #e0d7d75b;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+/* Estilos para la tabla que está dentro de la sección */
+#urgencias-estadisticas table {
+  width: 80%;
+  margin: 20px auto;
+  border-collapse: collapse;
+}
+
+/* Media Query para responsividad */
+@media (max-width: 768px) {
+  header nav {
+    flex-direction: column;
+  }
+  #urgencias-estadisticas {
+    margin: 0 auto;
+    padding: 20px;
+  }
+}

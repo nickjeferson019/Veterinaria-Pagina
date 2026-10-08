@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <link rel="stylesheet" href="../CSS/estilos-estadisticas.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="/IMG/Favicon.png" type="image/x-icon">
+  <title>Clínica Veterinaria | Estadísticas</title>
+  <!-- Incluye Chart.js desde un CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="../index.html">Inicio</a>
+      <a href="../pages/acerca-de.html">Acerca de</a>
+      <a href="../pages/contacto.html">Contacto</a>
+    </nav>
+  </header>
+  <section id="urgencias-estadisticas">
+    <h1>Nuestras Urgencias</h1>
+    <canvas id="myChart" width="600" height="200"></canvas>
+  </section>
+  <div id="infoServicios" style="text-align: justify; font-size: 24px; font-weight: none; 
+margin-top: 50px; max-width: 600px; margin-left: auto; margin-right: auto;"></div> 
+<footer style="margin-top: 160px; background: #0083B0; padding: 20px; text-align: center ;">
+    <div class="contenedor-footer">
+      <div class="content-foo">
+        <h1>Contactate con nosotros</h1>
+      </div>
+      <div class="content-foo">
+        <h4>Numero de contacto</h4>
+        <p>+ 57 601 2281260</p>                
+      </div>
+      <div class="content-foo">
+        <h4>E-mail: veterinaria@gmail.com</h4>                
+      </div>
+      <div class="content-foo">
+        <h4>Ubicación</h4>
+        <p>Calle 57 #3-00</p>                
+      </div>
+    </div>
+    <h2 class="titulo-final">&copy;  Nick Jeferson Rivera Garces </h2>
+  </footer>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const data = [250, 120, 55, 175];
+        const labels = ['Urgencia resuelta', 'Tratamiento en casa', 'Hospitalización', 'Citas prioritarias'];
+        const totalAtenciones = data.reduce((acc, val) => acc + val, 0);
+    const ctx = document.getElementById('myChart').getContext('2d');
+    const myChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: labels,
+        datasets: [{
+          label: `Total de atenciones: ${totalAtenciones}`,
+          data: data,
+          backgroundColor: [
+            'rgba(255, 99, 132, 0.2)',
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(255, 206, 86, 0.2)',
+            'rgba(75, 192, 192, 0.2)'
+          ],
+          borderColor: [
+            'rgba(255, 99, 132, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)'
+          ],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        plugins: {
+          title: {
+            display: true,
+            padding: 10
+          }
+        },
+        scales: {
+          y: { beginAtZero: true }
+        }
+      }
+    });
+        const porcentajes = data.map(valor => ((valor / totalAtenciones) * 100).toFixed(2));
+        document.getElementById("infoServicios").innerHTML =
+          `En nuestra clínica veterinaria, hemos atendido un total de ${totalAtenciones} casos. 
+          De ellos, el ${porcentajes[0]}% fueron urgencias resueltas, el ${porcentajes[1]}% tratamientos en casa, 
+          el ${porcentajes[2]}% hospitalizaciones y el ${porcentajes[3]}% citas prioritarias. 
+          ¡Confía en nuestros servicios especializados siempre para el bienestar y seguridad de tu mascota!`;
+    });
+      </script>
+  </body>
+  </html>
+

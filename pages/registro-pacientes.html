@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../IMG/Favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="../CSS/registro-pacientes.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <title>Clínica Veterinaria | Registro Pacientes</title>
+</head>
+<body>
+    <form onsubmit="event.preventDefault(); guardarRegistro();">
+        <div class="formulario">
+            <h2>Registro de Paciente</h2>
+            <div id="error" class="error"></div>
+            <div class="campo">
+                <label>ID del paciente:</label>
+                <input type="text" id="id" required>
+            </div>
+            <div class="campo">
+                <label>Nombre de la mascota:</label>
+                <input type="text" id="nombre" required>
+            </div>
+            <div class="campo">
+                <label>Especie:</label>
+                <select id="especie" required>
+                    <option value="">Seleccionar</option>
+                    <option value="Perro">Perro</option>
+                    <option value="Gato">Gato</option>
+                    <option value="Conejo">Conejo</option>
+                </select>
+            </div>
+            <div class="campo">
+                <label>Estado de urgencia:</label>
+                <select id="urgencia" required>
+                    <option value="">Seleccionar</option>
+                    <option value="Alta">Alta</option>
+                    <option value="Media">Media</option>
+                    <option value="Baja">Baja</option>
+                </select>
+            </div>
+            <div class="campo">
+                <label>Nombre del dueño:</label>
+                <input type="text" id="dueno" required>
+            </div>
+            <div class="campo">
+                <label>Número de contacto:</label>
+                <input type="tel" id="contacto" required>
+            </div>
+            <div class="campo">
+                <label>Correo electrónico:</label>
+                <input type="email" id="correo" required>
+            </div>
+            <div class="campo">
+                <label for="fecha">Fecha de ingreso:</label>
+                <input type="date" id="fecha" name="fecha">
+            </div>
+            <div class="campo">
+                <label>Hora de ingreso:</label>
+                <input type="time" id="hora" required>
+            </div>
+            <div class="campo">
+                <label for="observaciones" class="observaciones-label">Observaciones de ingreso:</label>
+                <textarea id="observaciones" name="observaciones" class="observaciones-textarea" placeholder="Ingresa las observaciones de ingreso de la mascota" required></textarea>
+            </div>
+            <button type="submit">Guardar</button>
+        </div>
+    </form>
+    <script>      
+
+        function guardarRegistro() {
+        const id = document.getElementById('id').value.trim();
+        
+        const especie = document.getElementById('especie').value.trim();
+        const urgencia = document.getElementById('urgencia').value;
+        const dueno = document.getElementById('dueno').value.trim();
+        const contacto = document.getElementById('contacto').value.trim();
+        const correo = document.getElementById('correo').value.trim();
+        const hora = document.getElementById('hora').value;
+        const errorDiv = document.getElementById('error');
+
+        if (!id || !especie || !urgencia || !dueno || !contacto || !correo || !hora) {
+            errorDiv.textContent = "Por favor, completa todos los campos.";
+            return;
+        }
+
+        errorDiv.textContent = "";
+        alert("Datos guardados correctamente.");
+
+        // Guardar en localStorage
+        const registro = {
+        nombre: document.getElementById('nombre').value.trim(),
+        especie: document.getElementById('especie').value,
+        urgencia: document.getElementById('urgencia').value,
+        dueno: document.getElementById('dueno').value.trim(),
+        fecha: document.getElementById('fecha').value,
+        observaciones: document.getElementById('observaciones').value.trim()
+        };
+        localStorage.setItem(`registro_${id}`, JSON.stringify(registro));
+
+        alert("Datos guardados correctamente.");
+        document.querySelector("form").reset();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,222 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Open Sans", sans-serif;    
+}
+
+body {    
+    width: 100%;
+    height: 100%;   
+}
+
+header {
+    width: 100%;
+    height: 200px; /* Altura igual a la imagen del banner */
+    background: #00B4DB;
+    background: -webkit-linear-gradient(to right, hsla(351, 83%, 55%, 0.61), hsla(203, 100%, 50%, 0.61)), url(../IMG/banner-dashboard.png);
+    background: linear-gradient(to right, hsla(351, 83%, 55%, 0.61), hsla(203, 100%, 50%, 0.61)), url(../IMG/banner-dashboard.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-attachment: fixed;
+    position: relative;
+}
+
+.texto-header {
+    width: 80%;
+    max-width: 100%;
+    margin: 10px auto;
+    padding: 20px;
+    color: #fff;
+    text-align: center;
+    font-size: 18px;
+    box-sizing: border-box;
+    overflow-wrap: break-word;
+}
+
+.texto-header h1 {
+    color: #fff;
+    font-size: 40px;
+    width: 100%;
+    margin: 0 auto;
+    overflow-wrap: break-word;
+    padding: 40px 0px 15px;
+}
+
+.boton-cerrar-sesion{
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    padding: 0 32px;
+    background-image: linear-gradient(45deg,#00B4DB,#0083B0);
+    border: 2px solid #fff;
+    height: 35px;
+    color: #000;
+    text-decoration: none;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 15px;
+    line-height: 35px;
+    min-width: 90px;
+    box-sizing: border-box;
+    z-index: 2;
+    transition: background 0.3s, color 0.3s;
+}
+
+.boton-cerrar-sesion:hover{
+    background-image: linear-gradient(45deg,#00B4DB,#0083B0);
+    color: #fff;
+}
+
+.contenedor-servicios {
+    width: 100%;
+    min-height: 60vh;
+    padding: 97px 10px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.content-registro-pacientes > img,
+.content-historia-clinica > img,
+.content-seguimiento-control > img {
+    display: block;    
+    height: 300px;
+    margin: 0 auto;    
+}
+
+.content-registro-pacientes,
+.content-historia-clinica,
+.content-seguimiento-control {    
+    width: 400px;
+    margin: 0 40px;
+    padding: 30px 20px;
+    box-sizing: border-box;
+    box-shadow: 10px 4px 10px 10px #ccc;
+    background: linear-gradient(180deg,#00B4DB,#05759b);
+    border-radius: 20px;
+    flex-shrink: 0;
+    transition: width 0.3s, margin 0.3s, padding 0.3s;
+}
+
+.content-registro-pacientes > .boton-registro-pacientes,
+.content-seguimiento-control > .boton-seguimiento-control,
+.content-historia-clinica > .boton-historia-clinica {
+    display: block;
+    margin: 5px auto;
+    background-image: linear-gradient(45deg,#00B4DB,#0083B0);    
+    border: 2px solid #fff;
+    width: auto;
+    height: 35px;
+    color: #000000;
+    text-decoration: none;
+    border-radius: 8px;
+    padding: 0 20px;       
+    text-align: center;
+    transition: background 0.3s, color 0.3s;;
+}
+
+.content-registro-pacientes > .boton-registro-pacientes:hover,
+.content-historia-clinica > .boton-historia-clinica:hover,
+.content-seguimiento-control > .boton-seguimiento-control:hover {
+    background-image: linear-gradient(45deg,#0083B0,#00B4DB);
+    color: #fff;
+}
+
+footer{
+    background: linear-gradient(45deg,#0083B0,#00B4DB);
+    padding: 30px 0 30px 0;
+    margin: auto;
+    overflow: hidden;
+    text-align: center;
+}
+
+footer > .titulo-final {
+    color: #fff;
+    font-size: 20px;
+}
+
+@media screen and (max-width:900px){
+    header{
+        background-position: center;
+        background-size: contain;
+    }
+    
+    .texto-header{
+        width: 90%;
+        height: 90%;
+        font-size: 15px;
+        box-sizing: border-box;
+        overflow-wrap: break-word;
+        text-align: center;
+        max-width: 100%;      
+    }
+
+    .texto-header h1{        
+        font-size: 30px;
+        padding: 30px 0px 10px;
+    }
+
+    .contenedor-servicios {
+        flex-direction: column;
+        padding: 40px 5px;
+        gap: 15px;
+    }
+    .content-registro-pacientes,
+    .content-historia-clinica,
+    .content-seguimiento-control {
+        width: 90%;
+        margin: 0 auto;
+        padding: 20px 10px;
+    }
+    .content-registro-pacientes > img,
+    .content-historia-clinica > img,
+    .content-seguimiento-control > img {
+        height: 200px;
+    }    
+}
+
+@media screen and (max-width:500px) {
+    
+    .texto-header {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        font-size: 16px;
+        padding: 10px;
+        box-sizing: border-box;
+        text-align: center;
+        overflow-wrap: break-word;
+    }
+
+    .texto-header h1 {
+        width: 100%;
+        font-size: 25px;
+        margin: 0 auto;
+        overflow-wrap: break-word;
+        padding: 50px 0px 8px;
+    }
+
+    .contenedor-servicios {
+        padding: 20px 2px;
+        gap: 10px;
+    }
+    .content-registro-pacientes,
+    .content-historia-clinica,
+    .content-seguimiento-control {
+        width: 100%;
+        margin: 0;
+        padding: 10px 2px;
+    }
+    .content-registro-pacientes > img,
+    .content-historia-clinica > img,
+    .content-seguimiento-control > img {
+        height: 120px;
+    }
+
+    
+}

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../IMG/Favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="../CSS/segui-control-pacientes.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <title>Clínica Veterinaria | Seg. Control Pacientes</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Control de pacientes</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+<div class="formulario">
+  <h2>Control de pacientes</h2>
+
+  <!-- Búsqueda -->
+  <div class="campo">
+    <label for="busqueda">Buscar por ID del Paciente:</label>
+    <input type="text" id="busqueda" placeholder="Ingresa el ID">
+    <button class="boton" onclick="buscarPaciente()">Buscar</button>
+  </div>
+  
+  <!-- Procedimientos -->
+  <div class="seccion">
+    <h3>Procedimientos Realizados</h3>
+    <select id="procedimientos">
+      <option value="">Seleccionar procedimiento</option>
+      <option value="Cirugía">Cirugía</option>
+      <option value="Curación">Curación</option>
+      <option value="Manejo de enfermedades crónicas">Manejo de enfermedades crónicas</option>
+      <option value="Manejo de enfermedades virales">Manejo de enfermedades virales</option>
+      <option value="Postquirúrgico">Posquirúrgico</option>
+    </select>
+  </div>
+
+  <!-- Signos vitales -->
+  <div class="seccion">
+    <h3>Control de Signos Vitales</h3>
+    <div class="campo">
+      <label for="temperatura">Temperatura (°C):</label>
+      <input type="number" id="temperatura" step="0.1">
+    </div>
+    <div class="campo">
+      <label for="frecuencia">Frecuencia Cardíaca (lpm):</label>
+      <input type="number" id="frecuencia">
+    </div>
+  </div>
+
+  <!-- Medicamentos -->
+  <div class="seccion">
+    <h3>Administración de Medicamentos</h3>
+    <div class="campo">
+      <label for="medicamento">Medicamento administrado:</label>
+      <input type="text" id="medicamento">
+    </div>
+    <div class="campo">
+      <label for="dosis">Dosis y horario:</label>
+      <input type="text" id="dosis">
+    </div>
+  </div>
+
+  <!-- Observaciones -->
+  <div class="seccion">
+    <h3>Observaciones de Seguimiento</h3>
+    <textarea id="observaciones" placeholder="Anota observaciones clínicas, evolución, etc."></textarea>
+  </div>
+
+  <div class="campo">
+    <button class="boton" onclick="guardarDatos()">Guardar Registro</button>
+  </div>
+
+  <div id="resultado" style="margin-top: 15px; color: green;"></div>
+</div>
+
+<script>
+  const pacientes = {};
+
+  function guardarDatos() {
+    const id = document.getElementById('id').value.trim();
+    if (!id) {
+      alert("El ID es obligatorio.");
+      return;
+    }
+
+    pacientes[id] = {
+      nombre: document.getElementById('nombre').value.trim(),
+      procedimiento: document.getElementById('procedimientos').value,
+      temperatura: document.getElementById('temperatura').value,
+      frecuencia: document.getElementById('frecuencia').value,
+      medicamento: document.getElementById('medicamento').value.trim(),
+      dosis: document.getElementById('dosis').value.trim(),
+      observaciones: document.getElementById('observaciones').value.trim()
+    };
+
+    document.getElementById('resultado').textContent = "Registro guardado exitosamente.";
+  }
+  
+  function guardarDatos() {
+    const id = document.getElementById('busqueda').value.trim();
+    const paciente = pacientes[id];
+
+    if (paciente) {
+      document.getElementById('id').value = id;
+      document.getElementById('nombre').value = paciente.nombre;
+      document.getElementById('procedimientos').value = paciente.procedimiento;
+      document.getElementById('temperatura').value = paciente.temperatura;
+      document.getElementById('frecuencia').value = paciente.frecuencia;
+      document.getElementById('medicamento').value = paciente.medicamento;
+      document.getElementById('dosis').value = paciente.dosis;
+      document.getElementById('observaciones').value = paciente.observaciones;
+      document.getElementById('resultado').textContent = "Paciente encontrado.";
+    } else {
+      document.getElementById('resultado').textContent = "Paciente no encontrado.";
+    }
+
+    // Guardar en localStorage
+    const seguimiento = {
+        procedimiento: document.getElementById('procedimientos').value,
+        temperatura: document.getElementById('temperatura').value,
+        frecuencia: document.getElementById('frecuencia').value,
+        medicamento: document.getElementById('medicamento').value.trim(),
+        dosis: document.getElementById('dosis').value.trim(),
+        observaciones: document.getElementById('observaciones').value.trim()
+    };
+    localStorage.setItem(`seguimiento_${id}`, JSON.stringify(seguimiento));
+
+    document.getElementById('resultado').textContent = "Registro guardado exitosamente.";
+  }
+</script>
+
+</body>
+</html>

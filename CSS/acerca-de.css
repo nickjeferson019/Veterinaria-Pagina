@@ -1,0 +1,91 @@
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+/* Filosofía */
+.filosofia {
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: justify; 
+    line-height: 1.6; 
+}
+
+.filosofia h1 {
+    text-align: center; 
+    margin-bottom: 1.5rem; 
+    color: #000; 
+}
+
+.filosofia h2 {
+    text-align: center;
+    margin-top: 2rem; 
+    margin-bottom: 1rem; 
+    color: #333; 
+    border-bottom: 2px solid #e3f2fd;
+    padding-bottom: 0.5rem; 
+}
+
+.filosofia p {
+    margin-bottom: 1rem;
+    text-indent: 1.5rem;
+}
+
+/* Equipo */
+.equipo {
+    background-color: #fff;
+    padding: 2rem;
+}
+
+.grid-equipo {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.integrante {
+    background: #e3f2fd;
+    border-radius: 10px;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.integrante img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+}
+
+.especialidad {
+    font-weight: 600;
+    color: #1976d2;
+}
+
+footer {
+    background: linear-gradient(45deg, #0083B0, #00B4DB);
+    padding: 60px 0 30px 0;
+    margin: auto;
+    overflow: hidden;
+    text-align: center; /* Centra el contenido */
+}
+
+.titulo-final {
+    color: white;
+    font-size: 1.2rem; 
+    margin: 0; 
+    font-weight: 400; 
+    padding: 10px; 
+}

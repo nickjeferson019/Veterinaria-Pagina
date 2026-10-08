@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../IMG/Favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="../CSS/dashboard.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <title>Clínica Veterinaria | Dashboard Service</title>
+</head>
+<body>
+    <header>
+        <button class="boton-cerrar-sesion" onclick="window.location.href='../index.html'">Cerrar Sesión</button>
+        <section class="texto-header">
+            <h1>Servicios de la Clínica Veterinaria</h1>
+            <p>Bienvenido al panel de servicios de nuestra clínica veterinaria. Aquí podrás acceder a las diferentes funcionalidades para gestionar los pacientes y sus historias clínicas.</p>
+        </section>        
+    </header>
+    <main>
+        <div class="contenedor-servicios">
+            <div class="content-registro-pacientes">
+                <img src="../IMG/registro-pacientes.png" alt="registro-pacientes"><br>
+                <button class="boton-registro-pacientes" onclick="window.location.href='../pages/registro-pacientes.html'">Registro Pacientes</button>
+            </div>
+            <div class="content-historia-clinica">
+                <img src="../IMG/historia-clinica.png" alt="historia-clinica"><br>
+                <button class="boton-historia-clinica" onclick="window.location.href='../pages/historia-clinica.html'">Historia Clínica Pacientes</button>
+            </div>
+            <div class="content-seguimiento-control">
+                <img src="../IMG/seguimiento-control.png" alt="seguimiento-control"><br>
+                <button class="boton-seguimiento-control" onclick="window.location.href='../pages/segui-control-pacientes.html'">Seguimiento y Control Pacientes</button>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <h2 class="titulo-final">&copy; Nick Jeferson Rivera Garces </h2>
+    </footer>    
+</body>
+</html>
