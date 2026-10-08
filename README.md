@@ -6,7 +6,7 @@
  
 Proyecto académico desarrollado con HTML, CSS y JavaScript.
  
-[![Ver la página]([https://img.shields.io/badge/Ver_la_página_en_vivo-2ea44f?style=for-the-badge&logo=github)](https://nickjeferson019.github.io/Veterinaria-Pagina/)](https://nickjeferson019.github.io/Veterinaria-Pagina/)
+[![Ver la página](https://img.shields.io/badge/Ver_la_página_en_vivo-2ea44f?style=for-the-badge&logo=github)](https://nickjeferson019.github.io/Veterinaria-Pagina/)
  
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)
